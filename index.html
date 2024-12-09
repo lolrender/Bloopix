@@ -24,7 +24,11 @@
     <section id="home">
         <h1>Welcome to Bloopix!</h1>
         <p>Your place to chat, open packs, trade, and buy bloops. Get started today!</p>
-        <a href="packs.html" class="cta-button">Start Opening Packs</a>
+        <div>
+            <a href="login.html" class="cta-button">Login</a>
+            <span>or</span>
+            <a href="signup.html" class="cta-button">Sign Up</a>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -94,10 +98,16 @@
         text-decoration: none;
         display: inline-block;
         margin-top: 20px;
+        margin-right: 10px;
     }
 
     .cta-button:hover {
         background-color: #45a049;
+    }
+
+    #home span {
+        font-size: 1.2em;
+        color: #555;
     }
 
     /* Footer */
