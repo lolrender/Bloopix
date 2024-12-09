@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloopix - Packs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header and Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Pack Opening Section -->
+    <section id="packs">
+        <h1>Open Your Packs</h1>
+
+        <!-- Pack Selection -->
+        <div class="pack-selection">
+            <div class="pack">
+                <h3>Mystery Pack</h3>
+                <p>Chance to get rare bloops!</p>
+                <button id="openMysteryPack">Open Mystery Pack</button>
+            </div>
+            <div class="pack">
+                <h3>Legendary Pack</h3>
+                <p>Guaranteed legendary bloops!</p>
+                <button id="openLegendaryPack">Open Legendary Pack</button>
+            </div>
+        </div>
+
+        <!-- Result Display -->
+        <div id="result">
+            <h2>Result</h2>
+            <p id="bloopResult">Click on a pack to see the result!</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Bloopix. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Probability and Pack Opening -->
+    <script>
+        // Function to get a random item from the packs based on probability
+        function getRandomItem(probabilities) {
+            const random = Math.random();
+            let cumulativeProbability = 0;
+
+            for (let i = 0; i < probabilities.length; i++) {
+                cumulativeProbability += probabilities[i].probability;
+                if (random < cumulativeProbability) {
+                    return probabilities[i].item;
+                }
+            }
+            return "Common Bloop";  // Default if no item is selected (should never happen)
+        }
+
+        // Function to handle opening the Mystery Pack
+        document.getElementById("openMysteryPack").addEventListener("click", function() {
+            const mysteryPackItems = [
+                { item: "Common Bloop", probability: 0.5 },
+                { item: "Rare Bloop", probability: 0.3 },
+                { item: "Epic Bloop", probability: 0.15 },
+                { item: "Legendary Bloop", probability: 0.05 }
+            ];
+
+            const result = getRandomItem(mysteryPackItems);
+            document.getElementById("bloopResult").innerText = `You got a ${result} from the Mystery Pack!`;
+        });
+
+        // Function to handle opening the Legendary Pack (always gives legendary)
+        document.getElementById("openLegendaryPack").addEventListener("click", function() {
+            const legendaryPackItems = [
+                { item: "Legendary Bloop", probability: 1 }
+            ];
+
+            const result = getRandomItem(legendaryPackItems);
+            document.getElementById("bloopResult").innerText = `You got a ${result} from the Legendary Pack!`;
+        });
+    </script>
+
+    <!-- Styles for the Packs Page -->
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* Packs Section */
+        #packs {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .pack-selection {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .pack {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            width: 200px;
+        }
+
+        .pack button {
+            background-color: #fff;
+            color: #4CAF50;
+            border: 2px solid #4CAF50;
+            padding: 8px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .pack button:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        /* Result Display */
+        #result {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #result h2 {
+            color: #4CAF50;
+        }
+
+        #result p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</body>
+</html>
