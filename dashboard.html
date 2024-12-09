@@ -13,8 +13,8 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="chat.html">Chat</a></li>
                 <li><a href="packs.html">Packs</a></li>
+                <li><a href="chat.html">Chat</a></li>
                 <li><a href="logout.html">Logout</a></li>
             </ul>
         </nav>
@@ -22,23 +22,92 @@
 
     <!-- Dashboard Section -->
     <section id="dashboard">
-        <h1>Your Dashboard</h1>
-        <p>Welcome to your personal dashboard. Here, you can see your bloops, trade items, and more!</p>
+        <h1>Welcome to Your Dashboard</h1>
+        <p>Manage your account, view your bloops, and trade with others!</p>
         <a href="packs.html" class="cta-button">Open Packs</a>
-        <a href="chat.html" class="cta-button">Go to Chat</a>
     </section>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 Bloopix. All rights reserved.</p>
     </footer>
-
-    <style>
-        /* Similar to previous styles */
-        #dashboard {
-            text-align: center;
-            padding: 20px;
-        }
-    </style>
 </body>
 </html>
+
+<style>
+    /* General Styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        color: #333;
+    }
+
+    /* Header */
+    header {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    header nav ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    header nav ul li {
+        display: inline;
+        margin: 0 15px;
+    }
+
+    header nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    /* Dashboard Section */
+    #dashboard {
+        text-align: center;
+        padding: 50px;
+    }
+
+    #dashboard h1 {
+        font-size: 2.5em;
+        color: #4CAF50;
+    }
+
+    #dashboard p {
+        font-size: 1.2em;
+        color: #555;
+    }
+
+    .cta-button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        font-size: 1.2em;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+    .cta-button:hover {
+        background-color: #45a049;
+    }
+
+    /* Footer */
+    footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
+</style>
