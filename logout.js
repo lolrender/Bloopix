@@ -1,14 +1,14 @@
-// Select the logout link or button from the header
+// Select the logout link
 const logoutLink = document.querySelector('#logout');
 
 // Add a click event listener
 logoutLink.addEventListener('click', (event) => {
-    event.preventDefault(); // Prevent default link behavior (if it's an anchor tag)
+    event.preventDefault(); // Stop the link from navigating to a new page
 
-    // Perform cleanup actions like clearing session/local storage
+    // Perform cleanup actions
     sessionStorage.clear(); // Clear session storage
-    localStorage.removeItem('user'); // Remove user data from local storage if applicable
+    localStorage.removeItem('user'); // Clear any saved user data in local storage
 
-    // Redirect the user to the homepage
+    // Redirect to the homepage
     window.location.href = 'index.html';
 });
